@@ -1,0 +1,12 @@
+canvas {
+    background-color: #ffcccc;
+    display: block;
+    margin: 0 auto;
+    border: 1px solid gray;
+}
+
+h1 {
+    font-family: 'Emilys Candy', cursive;
+    letter-spacing: 1px;
+    text-align: center;
+}

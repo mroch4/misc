@@ -1,0 +1,48 @@
+.bokeh {
+    width: 100vw;
+    height: 100vw;
+    position: relative;
+    background: #1d0302;
+    overflow: hidden;
+}
+
+$bokehCount: 25;
+$bokehBaseSize: 11rem;
+$bokehBaseOpacity: 0.45;
+$bokehBaseDuration: 16s;
+$bokehBaseBrightness: 200;
+
+$colorSet: (#ffa6007c,
+    #fe000060,
+    #ec6b025b);
+
+.bokeh div {
+    position: absolute;
+    border-radius: 50%;
+    animation-name: bokeh;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+
+    @for $i from 1 through $bokehCount {
+        &:nth-child(#{$i}) {
+            $randomizedSize: random() + $bokehBaseSize;
+            width: $randomizedSize;
+            height: $randomizedSize;
+            top: random(100)*1%;
+            left: random(100)*1%;
+            color: nth($colorSet, random(length($colorSet)));
+            opacity: $bokehBaseOpacity + random(4)*0.15;
+            box-shadow: ($randomizedSize + 5rem) 0 (0.2rem + random()*0.5rem) currentColor;
+            filter: brightness ($bokehBaseBrightness + random(150)*1%);
+            transform-origin: (random(40)-20)*1rem (random(40)-20)*1rem;
+            animation-duration: $bokehBaseDuration + random(30)*1s;
+        }
+    }
+}
+
+@keyframes bokeh {
+    100% {
+        transform: rotate(360deg);
+    }
+}

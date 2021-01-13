@@ -1,0 +1,50 @@
+body {
+    background-color: pink
+}
+
+.text-3d {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 4rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) skewY(-6deg);
+    color: transparent;
+    transform-origin: bottom left;
+    text-shadow:
+        1px -1px 10px rgba(255, 255, 255, 0.4),
+        0px -1px 10px rgba(255, 255, 255, 0.4),
+        -1px -1px 10px rgba(255, 255, 255, 0.4),
+
+        0px -2px 3px #FFF,
+        -1px -2px 3px #FFF,
+        -2px -2px 3px #FFF,
+
+        -1px -3px 3px #DDD,
+        -2px -3px 3px #DDD,
+        -3px -3px 3px #DDD,
+
+        -2px -4px 2px #FFF,
+        -3px -4px 2px #FFF,
+        -4px -4px 2px #FFF,
+
+        -3px -5px 1px #FFF,
+        -4px -5px 1px #FFF,
+        -5px -5px 1px #FFF;
+}
+
+.text-3d::before {
+    content: "Hello Monika!";
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: skewX(30deg);
+    transform-origin: bottom left;
+    z-index: -1;
+    color: transparent;
+    text-shadow:
+        15px 0px 20px rgba(0, 0, 0, 0.25),
+        15px 0px 25px rgba(0, 0, 0, 0.2),
+        15px 0px 35px rgba(0, 0, 0, 0.15),
+        15px 0px 45px rgba(0, 0, 0, 0.1);
+}
